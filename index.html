@@ -42,6 +42,9 @@
               <textarea id="text" class="form-control" placeholder="Insert your string here"></textarea>
             </div>
           </div>
+          <div class="well well-sm">
+            <p id="matches"></p>
+          </div>
         </div>
       </div>
     </div>
@@ -51,7 +54,24 @@
     <script>
       $(function () {
         var pattern_input = $("#pattern");
-        var text_input  = $("#text");
+        var text_input = $("#text");
+        var matches_output = $("#matches");
+        
+        function match (event){
+          var current_pattern = pattern_input.val();
+          var text_value = text_input.val();
+          if (current_pattern !== "") {
+            var regexp = new RegExp(current_pattern,"g");
+            var array;
+            while ((array = regexp.exec(text_value))!== null)  {
+              console.log(array);
+              //console.log(regexp.exec(text_value));  
+            }
+          }
+        }
+        pattern_input.keyup(match);
+        text_input.keyup(match);
+
       });
     </script>
   </body>
