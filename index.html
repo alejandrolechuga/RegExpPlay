@@ -7,6 +7,7 @@
       body {
         padding-top: 60px;
       }
+      #matches {color:gray;}
     </style>
   </head>
   <body>
@@ -58,20 +59,26 @@
         var matches_output = $("#matches");
         
         function match (event){
+
           var current_pattern = pattern_input.val();
           var text_value = text_input.val();
+          var text_output = text_value;
           if (current_pattern !== "") {
             var regexp = new RegExp(current_pattern,"g");
             var array;
-            while ((array = regexp.exec(text_value))!== null)  {
-              console.log(array);
-              //console.log(regexp.exec(text_value));  
-            }
+            // while ((array = regexp.exec(text_value))!== null)  {
+            //   console.log(array);
+            //   text_output.
+            // }
+            text_output = text_value.replace(regexp, function(match){
+              console.log(match);
+              return "<span class=\"label label-default\"> "  + match + " </span>";
+            });
           }
+          $("#matches").html(text_output);
         }
         pattern_input.keyup(match);
         text_input.keyup(match);
-
       });
     </script>
   </body>
