@@ -47,11 +47,11 @@
         </div>
       </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-md-2">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-7">
           <div role="form">
             <div class="row">
               <div class="col-xs-8">
@@ -77,11 +77,151 @@
           </div>
           <label> Output </label>
           <div class="well well-sm">
-            <p id="matches"></p>
+            <p id="output"></p>
+          </div>
+          <label> Matches </label>
+          <div>
           </div>
         </div>
-      </div>
-      <div class="col-md-2">
+        <div class="col-md-3">
+          <h4> Reference </h4>
+          <table class="table table-bordered">
+            <thead>
+              <th>Char</th>
+              <th>Description</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>\</code></td>
+                <td>A backslash that precedes a non-special character indicates that the next character is special and is not to be interpreted literally</td>
+              </tr>
+              <tr>
+                <td><code>^</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>$</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>+</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>?</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>.</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>(x)</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>(?:x)</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>x(?=y)</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>x(?!y)</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>{n}</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>{n,m}</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>[xyz]</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>[^xyz]</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>[\b]</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\b</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\B</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\cX</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\D</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\f</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\n</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\r</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\s</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\S</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\t</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\v</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\w</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\W</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\n</code></th>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\0</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\xhh</code></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td><code>\uhhhh</code></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
     <script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
@@ -91,8 +231,9 @@
       $(function () {
         var pattern_input = $("#pattern");
         var text_input = $("#text");
-        var matches_output = $("#matches");
+        var matches_output = $("#output");
         var options = $("#options");
+        var matches_groups = $("#matches");
         
         function match (event){
 
