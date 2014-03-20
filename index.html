@@ -93,51 +93,72 @@
             <tbody>
               <tr>
                 <td><code>\</code></td>
-                <td>A backslash that precedes a non-special character indicates that the next character is special and is not to be interpreted literally</td>
+                <td>
+                  <p>A backslash that precedes a non-special character indicates that the next character is special and is not to be interpreted literally</p></td>
               </tr>
               <tr>
                 <td><code>^</code></td>
-                <td>Matches beginning of input. If the multiline flag is set to true, also matches immediately after a line break character</td>
+                <td>
+                  <p>Matches beginning of input. If the multiline flag is set to true, also matches immediately after a line break character
+                  </p></td>
               </tr>
               <tr>
                 <td><code>$</code></td>
-                <td>Matches end of input. If the multiline flag is set to true, also matches immediately before a line break character</td>
+                <td>
+                  <p>Matches end of input. If the multiline flag is set to true, also matches immediately before a line break character
+                  </p>
+                </td>
               </tr>
               <tr>
                 <td><code>+</code></td>
-                <td>Matches the preceding character 0 or more times. Equivalent to {0,}</td>
+                <td>
+                  <p>Matches the preceding character 0 or more times. Equivalent to {0,}
+                  </p></td>
               </tr>
               <tr>
                 <td><code>?</code></td>
-                <td>Matches the preceding character 1 or more times. Equivalent to {1,}</td>
+                <td>
+                  <p>Matches the preceding character 1 or more times. Equivalent to {1,}
+                  </p></td>
               </tr>
               <tr>
                 <td><code>.</code></td>
-                <td>Matches the preceding character 0 or 1 time. Equivalent to {0,1}</td>
+                <td>
+                  <p>
+                    Matches the preceding character 0 or 1 time. Equivalent to {0,1}
+                  </p></td>
               </tr>
               <tr>
                 <td><code>(x)</code></td>
-                <td>(The decimal point) matches any single character except the newline character</td>
+                <td>
+                  <p>(The decimal point) matches any single character except the newline character
+                  </p></td>
               </tr>
               <tr>
                 <td><code>(?:x)</code></td>
-                <td>Matches 'x' but does not remember the match. The parentheses are called non-capturing parentheses, and let you define subexpressions for regular expression operators to work with</td>
+                <td>
+                  <p>Matches 'x' but does not remember the match. The parentheses are called non-capturing parentheses, and let you define subexpressions for regular expression operators to work with
+                  </p></td>
               </tr>
               <tr>
                 <td><code>x(?=y)</code></td>
-                <td>Matches 'x' only if 'x' is followed by 'y'. This is called a lookahead</td>
+                <td><p>Matches 'x' only if 'x' is followed by 'y'. This is called a lookahead</p></td>
               </tr>
               <tr>
                 <td><code>x(?!y)</code></td>
-                <td>Matches 'x' only if 'x' is not followed by 'y'. This is called a negated lookahead</td>
+                <td>
+                  <p>Matches 'x' only if 'x' is not followed by 'y'. This is called a negated lookahead</p></td>
               </tr>
               <tr>
                 <td><code>{n}</code></td>
-                <td></td>
+                <td><p>Matches exactly n occurrences of the preceding character. N must be a positive integer.</p></td>
               </tr>
               <tr>
                 <td><code>{n,m}</code></td>
-                <td></td>
+                <td><p>
+                  Where n and m are positive integers. Matches at least n and at most m occurrences of the preceding character. When m is zero, it can be omitted
+                </p>
+                </td>
               </tr>
               <tr>
                 <td><code>[xyz]</code></td>
